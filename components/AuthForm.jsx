@@ -60,7 +60,7 @@ export default function AuthForm({ mode, next }) {
         email,
         password,
         options: {
-          data: { full_name: fullName },
+          data: { full_name: fullName, display_name: fullName },
           emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
         },
       });

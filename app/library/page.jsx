@@ -14,10 +14,10 @@ const CATEGORIES = [
   'Videos and links',
 ];
 
-// The column that stores a resource's category is confirmed when we inspect the
-// resources table. Until then we accept the likely names.
+// The category (CATs, Assignments, ...) is stored in the "category" column.
+// "resource_type" only says what kind of file it is (document, video, link, other).
 function typeOf(r) {
-  return r.resource_type ?? r.type ?? r.category ?? '';
+  return r.category ?? '';
 }
 
 export default async function LibraryPage({ searchParams }) {
