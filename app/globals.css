@@ -170,13 +170,44 @@ input:focus { border-color: var(--cyan); outline: none; box-shadow: 0 0 0 2px rg
   .trace path { animation: none; stroke-dashoffset: 0; }
   .menu-panel.open { animation: none; }
 }
-/* Category row under the header */
+
+/* Category row under the header: small boxed items */
 .subnav { border-top: 1px solid var(--line); }
-.subnav-list { display: flex; gap: 0.25rem; overflow-x: auto; padding-block: 0.4rem;
-  scrollbar-width: none; }
-.subnav-list::-webkit-scrollbar { display: none; }
-.subnav a { flex: none; padding: 0.45rem 0.85rem; border-radius: 8px; color: var(--text);
-  font-family: var(--heading); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
-  text-transform: uppercase; white-space: nowrap; }
-.subnav a:hover { background: var(--surface-2); text-decoration: none; }
-.subnav a[aria-current='page'] { background: var(--surface-2); color: var(--cyan); }
+.subnav-list { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-block: 0.5rem; }
+.subnav a { display: inline-flex; align-items: center; min-height: 30px; padding: 0.25rem 0.7rem;
+  border: 1px solid var(--line); border-radius: 8px; color: var(--text);
+  font-family: var(--heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em;
+  text-transform: uppercase; white-space: nowrap;
+  transition: border-color 0.15s, background 0.15s; }
+.subnav a:hover { border-color: var(--cyan); background: var(--surface-2); text-decoration: none; }
+.subnav a[aria-current='page'] { border-color: var(--cyan); background: rgba(34, 211, 238, 0.12);
+  color: var(--cyan); }
+
+/* Screen sizes */
+html { -webkit-text-size-adjust: 100%; }
+img, svg, video { max-width: 100%; }
+
+/* Tablets and phones: one scrollable row of boxes */
+@media (max-width: 900px) {
+  .subnav-list { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .subnav-list::-webkit-scrollbar { display: none; }
+  .subnav a { flex: none; scroll-snap-align: start; }
+  .hero { padding-top: 2.5rem; }
+  .section { padding: 2.25rem 0; }
+  .page { padding: 2rem 0 3rem; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .actions .btn { width: 100%; }
+  .trace { height: 80px; margin-top: 2rem; }
+  .menu-panel { width: 100%; }
+  h2 { font-size: 1.45rem; }
+}
+
+/* Large desktops */
+@media (min-width: 1400px) {
+  body { font-size: 1.05rem; }
+  .container { width: min(1240px, 100% - 4rem); }
+}
