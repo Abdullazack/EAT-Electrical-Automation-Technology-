@@ -211,3 +211,12 @@ img, svg, video { max-width: 100%; }
   body { font-size: 1.05rem; }
   .container { width: min(1240px, 100% - 4rem); }
 }
+/* Use the full screen width on laptops and desktops */
+.container { width: min(1720px, 100% - clamp(2rem, 8vw, 10rem)); }
+.kinds { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .kinds { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .kinds { grid-template-columns: 1fr; } }
+@media (min-width: 1400px) {
+  .hero h1 { max-width: 20ch; }
+  .subtitle { max-width: 60ch; }
+}
