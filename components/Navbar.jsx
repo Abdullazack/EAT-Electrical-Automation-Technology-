@@ -29,9 +29,9 @@ export default function Navbar({ user }) {
   return (
     <header className="site-header">
       <div className="container bar">
-        <Link href="/" className="brand">
+        <Link href="/" className="brand" aria-label="Electrical Automation Technology, home">
           <Zap size={20} aria-hidden="true" />
-          <span>Electrical Automation Technology</span>
+          <span>EAT</span>
         </Link>
 
         <button
