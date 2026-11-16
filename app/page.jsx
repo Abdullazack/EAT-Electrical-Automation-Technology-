@@ -1,4 +1,7 @@
+
 import Link from 'next/link';
+import HomeHeroActions from '../components/home-hero-actions';
+
 import {
   ClipboardCheck,
   Timer,
@@ -23,15 +26,19 @@ export default function HomePage() {
       <section className="hero">
         <div className="container">
           <h1>Welcome to Electrical Automation Technology</h1>
+
           <p className="subtitle">
             Your gateway to advanced learning and innovation in Electrical Automation
           </p>
-          <div className="actions">
-            <Link href="/library" className="btn">Browse the library</Link>
-            <Link href="/signup" className="btn btn-ghost">Create a free account</Link>
-          </div>
 
-          <svg className="trace" viewBox="0 0 600 140" preserveAspectRatio="none" aria-hidden="true">
+          <HomeHeroActions />
+
+          <svg
+            className="trace"
+            viewBox="0 0 600 140"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
             <path
               pathLength="1"
               d="M0 100 H110 L140 50 H250 L280 110 H390 L420 30 H600"
@@ -75,6 +82,7 @@ export default function HomePage() {
                 <li>Explore projects, contact and subscription details</li>
               </ul>
             </div>
+
             <div>
               <h3>With a free account</h3>
               <ul>
